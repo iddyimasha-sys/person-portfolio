@@ -130,7 +130,7 @@ function App() {
 
         <p>Email: <a href="mailto:iddyimasha@example.com">iddyimasha@example.com</a></p>
         <p>Phone: <a href="tel:+256679465877">0679465877</a> / <a href="tel:+256616315877">0616315877</a></p>
-        <p>GitHub: <a href="https://github.com/Imasha-123" target="_blank" rel="noreferrer">github.com/Imasha-123</a></p>
+        <p>GitHub: <a href="https://github.com/iddyimasha-sys" target="_blank" rel="noreferrer">github.com/iddyimasha-sys</a></p>
       </section>
 
       <footer className="footer">
