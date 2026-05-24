@@ -4,9 +4,8 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "vite"
+    "dev": "vite",
     "start": "node server.js"
-    
   },
   "dependencies": {
     "cors": "^2.8.6",
