@@ -3,8 +3,11 @@ import cors from "cors";
 
 const app = express();
 
-// allow frontend to connect
-app.use(cors());
+// allow frontend to connect (set FRONTEND_URL on Render to your Vercel URL)
+const corsOptions = process.env.FRONTEND_URL
+	? { origin: process.env.FRONTEND_URL }
+	: {};
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // simple API route
