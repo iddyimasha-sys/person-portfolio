@@ -93,7 +93,9 @@ function App() {
             </div>
             <div className="stack-body">
               <h3>Bachelor of Science in Data Science</h3>
-              <p className="muted">EASTC — coursework in statistics, programming, and machine learning.</p>
+              <p className="muted" style={{ color: "#000" }}>
+                EASTC — coursework in statistics, programming, and machine learning.
+              </p>
             </div>
           </div>
         </div>
