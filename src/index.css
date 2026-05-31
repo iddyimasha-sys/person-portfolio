@@ -341,8 +341,15 @@ body{ padding-top:76px; }
 
 #skills .skills span:hover{
   transform: translateY(-1px);
-  color:#ffffff;
+  color:#000000;
 }
+
+#skills .skills span:focus-visible{
+  outline:2px solid rgba(14,165,233,0.55);
+  outline-offset:3px;
+  color:#000000;
+}
+
 
 
 /* PROJECTS */
@@ -365,8 +372,13 @@ body{ padding-top:76px; }
   font-size:18px;
   font-weight:900;
   margin-bottom:8px;
+  color:#000000;
+}
+
+.project p{
   color:#0f172a;
 }
+
 
 /* CONTACT */
 .contact{
