@@ -13,7 +13,18 @@ function App() {
       <nav className="navbar">
         <h2 className="logo">Imasha.dev</h2>
 
-        <ul>
+        <button
+          className="mobile-menu-btn"
+          type="button"
+          aria-label="Open navigation menu"
+          onClick={() => {
+            document.body.classList.toggle('mobile-nav-open');
+          }}
+        >
+          <span aria-hidden="true">☰</span>
+        </button>
+
+        <ul className="nav-links">
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#qualification">Qualification</a></li>
@@ -32,6 +43,7 @@ function App() {
         </ul>
       </nav>
 
+
       <section className="hero" id="home">
       <img src={profile} alt="Imasha" className="profile-image" />
         <h1>
@@ -44,7 +56,21 @@ function App() {
           solving real-world problems with technology.
         </p>
 
-        <button type="button" onClick={scrollToProjects}>Explore My Work</button>
+        <div className="hero-actions">
+          <button type="button" onClick={scrollToProjects} className="primary-cta">
+            <span className="cta-icon" aria-hidden="true">→</span>
+            Explore My Work
+          </button>
+          <button
+            type="button"
+            className="secondary-cta"
+            onClick={() => { window.location.href = '/resume.html'; }}
+          >
+            <span className="cta-icon" aria-hidden="true">⬇</span>
+            View CV
+          </button>
+        </div>
+
       </section>
 
       <section className="card" id="about">
@@ -58,14 +84,21 @@ function App() {
       </section>
 
       <section className="card" id="qualification">
-        <h2>Qualification</h2>
+        <h2>Education</h2>
 
-        <p>
-          Currently studying for a Bachelor of Science in Data Science
-          at EASTC, with coursework in statistics, programming,
-          and machine learning.
-        </p>
+        <div className="stack">
+          <div className="stack-item">
+            <div className="stack-meta">
+              <span className="stack-year">2022 - Present</span>
+            </div>
+            <div className="stack-body">
+              <h3>Bachelor of Science in Data Science</h3>
+              <p className="muted">EASTC — coursework in statistics, programming, and machine learning.</p>
+            </div>
+          </div>
+        </div>
       </section>
+
 
       <section className="card" id="skills">
         <h2>Skills</h2>
@@ -139,14 +172,86 @@ function App() {
       <section className="card contact" id="contact">
         <h2>Contact</h2>
 
-        <p>Email: <a href="mailto:iddyimasha@example.com">iddyimasha@example.com</a></p>
-        <p>Phone: <a href="tel:+256679465877">0679465877</a> / <a href="tel:+256616315877">0616315877</a></p>
-        <p>GitHub: <a href="https://github.com/iddyimasha-sys" target="_blank" rel="noreferrer">github.com/iddyimasha-sys</a></p>
+        <div className="contact-grid">
+          <div className="contact-info">
+            <p>
+              <span className="contact-icon" aria-hidden="true">✉</span>
+              Email: <a href="mailto:iddyimasha@gmail.com">iddyimasha@gmail.com</a>
+            </p>
+            <p>
+              <span className="contact-icon" aria-hidden="true">☎</span>
+              Phone: <a href="tel:+256679465877">0679465877</a> / <a href="tel:+256616315877">0616315877</a>
+            </p>
+            <p>
+              <span className="contact-icon" aria-hidden="true">⌖</span>
+              Address: Dar es Salaam, Tanzania
+            </p>
+            <p>GitHub: <a href="https://github.com/iddyimasha-sys" target="_blank" rel="noreferrer">github.com/iddyimasha-sys</a></p>
+          </div>
+
+          <form
+            className="contact-form"
+            onSubmit={(e) => {
+              e.preventDefault();
+              const form = e.currentTarget;
+              const formData = new FormData(form);
+              const name = formData.get('name');
+              const email = formData.get('email');
+              const message = formData.get('message');
+
+              // Demo behavior: opens mail client (no backend required)
+              window.location.href = `mailto:iddyimasha@gmail.com?subject=${encodeURIComponent(
+                `Portfolio message from ${name || 'visitor'}`
+              )}&body=${encodeURIComponent(`Email: ${email}\n\n${message}`)}`;
+            }}
+          >
+            <div className="form-row">
+              <label>
+                Name
+                <input name="name" type="text" required placeholder="Your name" />
+              </label>
+              <label>
+                Email
+                <input name="email" type="email" required placeholder="you@example.com" />
+              </label>
+            </div>
+
+            <label className="form-message">
+              Message
+              <textarea name="message" required rows="5" placeholder="Write your message..." />
+            </label>
+
+            <button type="submit" className="primary-cta">
+              <span className="cta-icon" aria-hidden="true">✈</span>
+              Send Message
+            </button>
+          </form>
+        </div>
       </section>
 
+
       <footer className="footer">
-        <p>© 2026 Imasha Portfolio. All rights reserved.</p>
+        <p>Imasha — © 2026 Imasha Portfolio. All rights reserved.</p>
+        <div className="footer-links" aria-label="Social links">
+          <a className="social-icon" href="https://github.com/iddyimasha-sys" target="_blank" rel="noreferrer" aria-label="GitHub">
+            <span className="social-dot" aria-hidden="true">GH</span>
+          </a>
+          <a className="social-icon" href="#" aria-label="LinkedIn">
+            <span className="social-dot" aria-hidden="true">in</span>
+          </a>
+          <a className="social-icon" href="mailto:iddyimasha@example.com" aria-label="Email">
+            <span className="social-dot" aria-hidden="true">@</span>
+          </a>
+          <a className="social-icon" href="#" aria-label="Instagram">
+            <span className="social-dot" aria-hidden="true">IG</span>
+          </a>
+          <a className="social-icon" href="#" aria-label="Facebook">
+            <span className="social-dot" aria-hidden="true">f</span>
+          </a>
+        </div>
+
       </footer>
+
 
     </div>
   );
