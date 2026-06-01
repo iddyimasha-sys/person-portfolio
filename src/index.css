@@ -339,10 +339,27 @@ body{ padding-top:76px; }
   transition: color .2s ease, transform .18s ease;
 }
 
+/* Disable hover effects inside Skills container */
 #skills .skills span:hover{
-  transform: translateY(-1px);
-  color:#000000;
+  transform: none;
+  color: inherit;
 }
+
+/* Skills container: keep no visual changes during hover */
+#skills.card:hover{
+  background:rgba(255,255,255,0.04);
+  border-color:rgba(255,255,255,0.10);
+}
+
+#skills.card:hover h2{
+  background:#0b1f3a;
+  color:#ffffff;
+}
+
+#skills.card:hover p{
+  color:rgba(255,255,255,0.92);
+}
+
 
 #skills .skills span:focus-visible{
   outline:2px solid rgba(14,165,233,0.55);
@@ -383,7 +400,27 @@ body{ padding-top:76px; }
 /* CONTACT */
 .contact{
   background:rgba(255,255,255,0.03);
+  transition: background .2s ease, border-color .2s ease, transform .2s ease;
 }
+
+/* Disable hover styling for Contact card */
+.contact:hover{
+  background:rgba(255,255,255,0.03);
+  border-color:rgba(255,255,255,0.10);
+}
+
+/* Keep Contact header/paragraph colors unchanged on hover */
+#contact.card:hover h2{
+  background:#0b1f3a;
+  color:#ffffff;
+}
+
+#contact.card:hover p{
+  color:rgba(255,255,255,0.92);
+}
+
+
+
 
 .contact h2{ color:#e2e8f0; }
 
@@ -396,11 +433,12 @@ body{ padding-top:76px; }
 
 .contact-info p{
   margin:10px 0;
-  color:#cbd5e1;
+  color:#ffffff;
   display:flex;
   align-items:flex-start;
   gap:10px;
 }
+
 
 .contact-icon{
   width:26px;
@@ -417,14 +455,17 @@ body{ padding-top:76px; }
 }
 
 .contact a{
-  color:#7dd3fc;
-  font-weight:800;
-  transition: color .2s ease;
+  color:#ffffff;
+  font-weight:900;
+  transition: color .2s ease, opacity .2s ease;
 }
 
 .contact a:hover{
-  color:#38bdf8;
+  color:#ffffff;
+  opacity:1;
 }
+
+
 
 .contact-form{
   background:rgba(255,255,255,0.04);
